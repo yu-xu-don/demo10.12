@@ -1,0 +1,10 @@
+<p>profile works!</p>
+<input nz-input type="text" nzSize='large' [(ngModel)]="value">
+<span>输入框的值:{{value}}</span>
+<button nz-button nzType='primary' (click)="doAdd()" [ngClass]="{'lg': num>20,'def':num>10&&num<20,'small':num<10}">增加1:{{num}}</button>
+<ul>
+    <li *ngFor="let item of detail let key=index" >{{item.name}}----{{item.age}}</li>
+    <li>大写: {{ "hello world" | uppercase }}</li>
+    <li>小写: {{ "HELLO world" | lowercase }}</li>
+    <button nz-button nzType='primary' (click)="self()">点击传递值给父组件</button>
+</ul>

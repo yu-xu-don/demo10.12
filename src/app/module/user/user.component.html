@@ -1,0 +1,28 @@
+<p>user works!</p>
+<!-- <a [routerLink]="[ './profile' ]">profile</a>
+<br>
+<a [routerLink]="[ './address' ]">address</a> -->
+<span>{{msg}}</span>
+
+<button nz-button nzType="primary" (click)="doprofile()">profile</button>
+<button nz-button nzType="primary" (click)="doaddress()">address</button>
+<button nz-button nzType='primary' (click)="profile.getres()">点击查看console</button>
+<button nz-button nzType='primary' (click)="changeSon()">修改子元素</button>
+
+
+<form nz-form>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input name="email" type="email" id="email">
+      </nz-form-control>
+    </nz-form-item >
+  </form>
+  <nz-spin nzSimple [nzSize]="'small'"></nz-spin>
+    <nz-spin nzSimple></nz-spin>
+    <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+    <app-profile #profile [name]='name' [detail]='detail' (other)='getData($event)'></app-profile>
+    
+    <app-address (other)='getDataMsg($event)'></app-address>
+
+<router-outlet></router-outlet>
